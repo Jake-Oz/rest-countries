@@ -78,13 +78,15 @@ const DetailPage = async ({ params }: { params: { slug: string } }) => {
   }
 
   return (
-    <div className="grid grid-cols-2 px-16">
+    <div className="grid grid-cols-2 px-16 dark:bg-veryDarkBlue_DarkModeBG h-screen">
       <div className="col-span-1 flex flex-col justify-center items-start px-4">
         <BackButton />
-        <Image src={flags.svg} alt={flags.alt} width={800} height={650}></Image>
+        <Image src={flags.svg} alt={flags.alt} width={600} height={400}></Image>
       </div>
       <div className="col-span-1 flex flex-col justify-center items-start px-16 mt-48 ">
-        <h1 className="text-4xl font-extrabold mb-10">{name.common}</h1>
+        <h1 className="text-4xl font-extrabold mb-10 dark:text-white_DarkModeText_LightModeElements">
+          {name.common}
+        </h1>
         <div className="flex flex-row justify-between items-baseline gap-4 w-full ">
           <div className="">
             {!!nativeName && (
@@ -104,7 +106,7 @@ const DetailPage = async ({ params }: { params: { slug: string } }) => {
             <Detail_label labelName={"Languages"} labelText={languageSpans} />
           </div>
         </div>
-        <div className="mt-16 text-lg font-semibold flex flex-row justify-start items-center gap-4">
+        <div className="mt-16 text-lg font-semibold flex flex-row justify-start items-center gap-4 dark:text-white_DarkModeText_LightModeElements">
           <p>Border Countries:</p>
           <p className="flex flex-row gap-2 flex-wrap">{borderNames}</p>
         </div>

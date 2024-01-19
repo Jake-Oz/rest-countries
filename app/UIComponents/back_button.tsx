@@ -9,7 +9,7 @@ const BackButton = () => {
   return (
     <button
       onClick={() => router.back()}
-      className="flex justify-center items-center gap-2 w-36 h-12 bg-white_DarkModeText_LightModeElements shadow-lg rounded-lg font-semibold text-xl my-20"
+      className="flex justify-center items-center gap-2 w-36 h-12 bg-white_DarkModeText_LightModeElements dark:bg-darkBlue_DarkModeElements dark:text-white_DarkModeText_LightModeElements shadow-lg rounded-lg font-semibold text-xl my-20"
     >
       <BiArrowBack /> Back
     </button>

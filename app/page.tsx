@@ -60,7 +60,7 @@ export default async function Home({
   });
 
   return (
-    <main className="bg-veryLightGray_LightModeBG  ">
+    <main className="bg-veryLightGray_LightModeBG dark:bg-veryDarkBlue_DarkModeBG ">
       <hr className="border-none shadow-[rgba(133,133,133,0.20)_0px_2px_4px_1px]" />
       <section className="py-10 px-20">
         <div className="flex flex-row justify-between items-center">

@@ -27,15 +27,15 @@ const SearchForm = () => {
 
   return (
     <form action="" className="w-full">
-      <div className="flex flex-row justify-start items-center gap-6 h-16 w-1/2 shadow-md rounded-lg bg-white_DarkModeText_LightModeElements">
-        <div className="pl-6 text-darkGray_LightModeInput text-2xl font-extrabold">
+      <div className="flex flex-row justify-start items-center gap-6 h-16 w-1/2 shadow-md rounded-lg bg-white_DarkModeText_LightModeElements dark:bg-darkBlue_DarkModeElements">
+        <div className="pl-6 text-darkGray_LightModeInput dark:text-white_DarkModeText_LightModeElements text-2xl font-extrabold">
           <IoIosSearch />
         </div>
         <input
           type="text"
           name="country"
           placeholder="Search for a country..."
-          className="h-full w-full"
+          className="h-full w-full dark:text-white_DarkModeText_LightModeElements dark:bg-darkBlue_DarkModeElements"
           onChange={handleChange}
           defaultValue={searchParams.get("query")?.toString()}
         />

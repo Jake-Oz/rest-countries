@@ -8,7 +8,7 @@ const Detail_label = ({
   labelText: string;
 }) => {
   return (
-    <p className="font-semibold pb-2 text-lg">
+    <p className="font-semibold pb-2 text-lg dark:text-white_DarkModeText_LightModeElements">
       {`${labelName}: `}
       <span className="font-normal">{labelText}</span>
     </p>

@@ -13,14 +13,14 @@ interface CountryCardProps {
 
 const Country_Card = (countryProps: CountryCardProps) => {
   return (
-    <div className="flex flex-col bg-white_DarkModeText_LightModeElements w-80 rounded-lg shadow-sm overflow-hidden">
+    <div className="flex flex-col bg-white_DarkModeText_LightModeElements dark:bg-darkBlue_DarkModeElements dark:text-white_DarkModeText_LightModeElements w-80 rounded-lg shadow-sm overflow-hidden">
       <div className="">
         <Image
           src={countryProps.flagSrc}
           alt="country flag"
           width={0}
           height={0}
-          style={{ width: "400px", height: "180px" }}
+          style={{ width: "320px", height: "160px", objectFit: "fill" }}
         ></Image>
       </div>
       <div className="py-8 px-6">

@@ -45,7 +45,7 @@ const RegionSelector = () => {
       <div className="relative">
         <button
           onClick={() => setIsSelected(!isSelected)}
-          className="flex flex-row justify-between items-center bg-white_DarkModeText_LightModeElements rounded-md shadow-md w-56 h-14 pl-6 pr-2 focus:outline-none"
+          className="flex flex-row justify-between items-center bg-white_DarkModeText_LightModeElements dark:bg-darkBlue_DarkModeElements dark:text-white_DarkModeText_LightModeElements rounded-md shadow-md w-56 h-14 pl-6 pr-2 focus:outline-none"
         >
           <span className="leading-none">Filter by Region</span>
           <div className="text-3xl">
@@ -56,7 +56,7 @@ const RegionSelector = () => {
         <div
           className={`${
             isSelected ? "block" : "hidden"
-          } absolute flex flex-col w-full mt-1 rounded-md pl-4 py-4 bg-white_DarkModeText_LightModeElements shadow-lg`}
+          } absolute flex flex-col w-full mt-1 rounded-md pl-4 py-4 bg-white_DarkModeText_LightModeElements dark:bg-darkBlue_DarkModeElements dark:text-white_DarkModeText_LightModeElements shadow-lg`}
         >
           {items}
         </div>
