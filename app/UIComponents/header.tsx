@@ -7,6 +7,7 @@ import { CiLight } from "react-icons/ci";
 const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   useEffect(() => {
+    setIsDarkMode(matchMedia("(prefers-color-scheme: dark)").matches);
     matchMedia("(prefers-color-scheme: dark)").addEventListener(
       "change",
       ({ matches }) => {
