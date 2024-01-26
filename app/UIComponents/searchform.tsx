@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useRef } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { useDebouncedCallback } from "use-debounce";
 
@@ -9,6 +9,7 @@ const SearchForm = () => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleChange = useDebouncedCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
@@ -26,20 +27,27 @@ const SearchForm = () => {
   );
 
   return (
-    <form action="" className="w-full">
-      <div className="flex flex-row justify-start items-center gap-6 h-16 w-1/2 shadow-md rounded-lg bg-white_DarkModeText_LightModeElements dark:bg-darkBlue_DarkModeElements">
-        <div className="pl-6 text-darkGray_LightModeInput dark:text-white_DarkModeText_LightModeElements text-2xl font-extrabold">
-          <IoIosSearch />
-        </div>
-        <input
-          type="text"
-          name="country"
-          placeholder="Search for a country..."
-          className="h-full w-full dark:text-white_DarkModeText_LightModeElements dark:bg-darkBlue_DarkModeElements"
-          onChange={handleChange}
-          defaultValue={searchParams.get("query")?.toString()}
-        />
+    <form
+      action=""
+      className="w-5/12 min-w-64 max-w-[600px] flex flex-row justify-start items-center gap-6 h-14 shadow-full rounded-lg bg-white_DarkModeText_LightModeElements dark:bg-darkBlue_DarkModeElements focus-within:ring focus-within:ring-offset-2 overflow-hidden"
+    >
+      <div
+        onClick={() => {
+          inputRef.current?.focus();
+        }}
+        className="pl-6 text-darkGray_LightModeInput dark:text-white_DarkModeText_LightModeElements text-2xl font-extrabold"
+      >
+        <IoIosSearch />
       </div>
+      <input
+        ref={inputRef}
+        type="text"
+        name="country"
+        placeholder="Search for a country..."
+        className="h-full w-full outline-none dark:text-white_DarkModeText_LightModeElements dark:bg-darkBlue_DarkModeElements"
+        onChange={handleChange}
+        defaultValue={searchParams.get("query")?.toString()}
+      />
     </form>
   );
 };

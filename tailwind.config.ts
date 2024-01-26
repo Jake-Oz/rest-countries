@@ -19,6 +19,11 @@ const config: Config = {
       mobile: "376px",
       desktop: "1440px",
     },
+    extend: {
+      boxShadow: {
+        full: "0 0 4px 2px rgba(0, 0, 0, 0.08)",
+      },
+    },
   },
   plugins: [],
 };

@@ -33,9 +33,9 @@ const RegionSelector = () => {
         key={region}
         name={region}
         onClick={handleSelection}
-        className="flex items-center h-8 px-3"
+        className="flex items-center h-8 hover:bg-veryLightGray_LightModeBG dark:hover:bg-veryDarkBlue_DarkModeBG"
       >
-        {region}
+        <p className="pl-6">{region}</p>
       </button>
     );
   });
@@ -45,7 +45,7 @@ const RegionSelector = () => {
       <div className="relative">
         <button
           onClick={() => setIsSelected(!isSelected)}
-          className="flex flex-row justify-between items-center bg-white_DarkModeText_LightModeElements dark:bg-darkBlue_DarkModeElements dark:text-white_DarkModeText_LightModeElements rounded-md shadow-md w-56 h-14 pl-6 pr-2 focus:outline-none"
+          className="flex flex-row justify-between items-center bg-white_DarkModeText_LightModeElements dark:bg-darkBlue_DarkModeElements dark:text-white_DarkModeText_LightModeElements rounded-md shadow-full w-56 h-14 pl-6 pr-2 focus:outline-none"
         >
           <span className="leading-none">Filter by Region</span>
           <div className="text-3xl">
@@ -56,7 +56,7 @@ const RegionSelector = () => {
         <div
           className={`${
             isSelected ? "block" : "hidden"
-          } absolute flex flex-col w-full mt-1 rounded-md pl-4 py-4 bg-white_DarkModeText_LightModeElements dark:bg-darkBlue_DarkModeElements dark:text-white_DarkModeText_LightModeElements shadow-lg`}
+          } absolute flex flex-col w-full mt-1 rounded-md py-4 bg-white_DarkModeText_LightModeElements dark:bg-darkBlue_DarkModeElements dark:text-white_DarkModeText_LightModeElements shadow-lg`}
         >
           {items}
         </div>

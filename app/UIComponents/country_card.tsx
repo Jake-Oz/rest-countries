@@ -13,7 +13,7 @@ interface CountryCardProps {
 
 const Country_Card = (countryProps: CountryCardProps) => {
   return (
-    <div className="flex flex-col bg-white_DarkModeText_LightModeElements dark:bg-darkBlue_DarkModeElements dark:text-white_DarkModeText_LightModeElements w-80 rounded-lg shadow-sm overflow-hidden">
+    <div className="flex flex-col bg-white_DarkModeText_LightModeElements dark:bg-darkBlue_DarkModeElements dark:text-white_DarkModeText_LightModeElements mobile:max-w-80 desktop:w-80 rounded-lg shadow-sm overflow-hidden">
       <div className="">
         <Image
           src={countryProps.flagSrc}

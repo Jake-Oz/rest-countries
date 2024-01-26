@@ -29,12 +29,14 @@ export default async function Home({
     filteredCountries = countries.filter(
       (country) => country.region == searchParams.region
     );
-  } else {
+  } else if (!!searchParams?.country) {
     const term = searchParams?.country;
     const searchTerm = term ? term[0].toUpperCase() + term.slice(1) : "";
     filteredCountries = countries.filter((country) =>
       country.name.common.includes(searchTerm)
     );
+  } else {
+    filteredCountries = countries;
   }
 
   filteredCountries.sort((a, b) => {
@@ -61,14 +63,13 @@ export default async function Home({
 
   return (
     <main className="bg-veryLightGray_LightModeBG dark:bg-veryDarkBlue_DarkModeBG ">
-      <hr className="border-none shadow-[rgba(133,133,133,0.20)_0px_2px_4px_1px]" />
-      <section className="py-10 px-20">
-        <div className="flex flex-row justify-between items-center">
+      <section className="py-10 px-4 mobile:px-10 desktop:px-20">
+        <div className="flex flex-col mobile:flex-row justify-between mobile:items-top gap-4">
           <SearchForm />
           <RegionSelector />
         </div>
       </section>
-      <section className="grid grid-cols-1 desktop:grid-cols-4 gap-20 py-4 px-20">
+      <section className="grid grid-cols-1 mobile:grid-cols-2 desktop:grid-cols-4 mobile:gap-10 gap-20 py-4 px-2 mobile:px-20">
         {cards}
       </section>
     </main>
