@@ -82,7 +82,7 @@ const DetailPage = async ({ params }: { params: { slug: string } }) => {
   }
 
   return (
-    <div className="px-4 mobile:px-24 pt-10 mobile:pt-20 dark:bg-veryDarkBlue_DarkModeBG h-screen">
+    <div className="px-4 mobile:px-24 pt-10 mobile:pt-20 dark:bg-veryDarkBlue_DarkModeBG h-full">
       <BackButton />
       <div className="grid grid-cols-1 mobile:grid-cols-2">
         <div className="col-span-1 flex flex-col justify-center items-start">

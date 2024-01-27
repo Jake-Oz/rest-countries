@@ -21,7 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${nunito.className} bg-veryLightGray_LightModeBG`}>
+      <body
+        className={`${nunito.className} bg-veryLightGray_LightModeBG dark:bg-veryDarkBlue_DarkModeBG`}
+      >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
           {children}
