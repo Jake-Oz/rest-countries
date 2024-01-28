@@ -32,7 +32,7 @@ const SearchForm = () => {
       }
       replace(`${pathname}?${params.toString()}`);
     },
-    200
+    300
   );
 
   return (
