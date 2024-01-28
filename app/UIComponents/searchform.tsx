@@ -36,10 +36,7 @@ const SearchForm = () => {
   );
 
   return (
-    <form
-      action=""
-      className="w-5/12 min-w-64 max-w-[600px] flex flex-row justify-start items-center gap-6 h-14 shadow-full rounded-lg bg-white_DarkModeText_LightModeElements dark:bg-darkBlue_DarkModeElements focus-within:ring focus-within:ring-offset-2 overflow-hidden"
-    >
+    <form className="w-5/12 min-w-64 max-w-[600px] flex flex-row justify-start items-center gap-6 h-14 shadow-full rounded-lg bg-white_DarkModeText_LightModeElements dark:bg-darkBlue_DarkModeElements focus-within:ring focus-within:ring-offset-2 overflow-hidden">
       <div
         onClick={() => {
           inputRef.current?.focus();

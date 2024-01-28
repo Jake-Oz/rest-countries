@@ -24,7 +24,7 @@ const ThemeSwitcher = () => {
         }
       }
     );
-  }, []);
+  }, [setTheme]);
 
   if (!mounted) {
     return null;

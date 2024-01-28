@@ -20,7 +20,7 @@ export default function Error({
         Something went wrong!
       </h2>
       <button
-        className="mt-4 rounded-md bg-darkGray_LightModeInput dark:bg-darkBlue_DarkModeElements px-4 py-2 text-sm text-veryDarkBlue_LightModeText dark:text-white_DarkModeText_LightModeElements transition-colors hover:bg-blue-400"
+        className="mt-4 rounded-md bg-darkGray_LightModeInput dark:bg-darkBlue_DarkModeElements px-4 py-2 text-sm text-veryDarkBlue_LightModeText dark:text-white_DarkModeText_LightModeElements hover:bg-veryDarkBlue_LightModeText hover:text-veryLightGray_LightModeBG"
         onClick={
           // Attempt to recover by trying to re-render the invoices route
           () => reset()
