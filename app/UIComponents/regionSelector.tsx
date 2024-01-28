@@ -17,7 +17,6 @@ const RegionSelector = () => {
   useEffect(() => {
     const params = new URLSearchParams(searchParams);
     const region = params.get("region");
-    console.log(region);
     if (region !== null) {
       setRegionSelected(region);
     } else {

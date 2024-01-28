@@ -19,10 +19,8 @@ const ThemeSwitcher = () => {
       ({ matches }) => {
         if (matches) {
           setTheme("dark");
-          console.log("change to dark mode!");
         } else {
           setTheme("light");
-          console.log("change to light mode!");
         }
       }
     );
