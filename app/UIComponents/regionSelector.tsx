@@ -1,8 +1,9 @@
 "use client";
 
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
+import { FaCheck } from "react-icons/fa";
 
 const RegionSelector = () => {
   const regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
@@ -11,18 +12,31 @@ const RegionSelector = () => {
   const { replace } = useRouter();
 
   const [isSelected, setIsSelected] = useState(false);
+  const [regionSelected, setRegionSelected] = useState("");
+
+  useEffect(() => {
+    const params = new URLSearchParams(searchParams);
+    const region = params.get("region");
+    console.log(region);
+    if (region !== null) {
+      setRegionSelected(region);
+    } else {
+      setRegionSelected("");
+    }
+  }, [searchParams]);
 
   const handleSelection = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    console.log(event.currentTarget.name);
     const params = new URLSearchParams(searchParams);
-    if (event) {
-      params.set("region", event.currentTarget.name);
-      params.delete("country");
-    } else {
+    if (regionSelected === event.currentTarget.name) {
+      setRegionSelected("");
       params.delete("region");
+    } else {
+      setRegionSelected(event.currentTarget.name);
+      params.set("region", event.currentTarget.name);
     }
+
     replace(`${pathname}?${params.toString()}`);
     setIsSelected(!isSelected);
   };
@@ -35,7 +49,10 @@ const RegionSelector = () => {
         onClick={handleSelection}
         className="flex items-center h-8 hover:bg-veryLightGray_LightModeBG dark:hover:bg-veryDarkBlue_DarkModeBG"
       >
-        <p className="pl-6">{region}</p>
+        {regionSelected === region && <FaCheck className="pl-2" />}
+        <p className={`${regionSelected === region ? "pl-2" : "pl-6"}`}>
+          {region}
+        </p>
       </button>
     );
   });

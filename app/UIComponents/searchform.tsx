@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import React, { ChangeEvent, useRef } from "react";
+import React, { ChangeEvent, useEffect, useRef } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { useDebouncedCallback } from "use-debounce";
 
@@ -11,15 +11,24 @@ const SearchForm = () => {
   const { replace } = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
 
+  useEffect(() => {
+    const params = new URLSearchParams(searchParams);
+    const country = params.get("country");
+    if (country !== null) {
+      inputRef.current!.value = country;
+    } else {
+      inputRef.current!.value = "";
+    }
+  }, [searchParams]);
+
   const handleChange = useDebouncedCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
       e.preventDefault();
       const params = new URLSearchParams(searchParams);
-      if (e) {
-        params.set("country", e.target.value);
-        params.delete("region");
-      } else {
+      if (e.target.value === "") {
         params.delete("country");
+      } else {
+        params.set("country", e.target.value);
       }
       replace(`${pathname}?${params.toString()}`);
     },

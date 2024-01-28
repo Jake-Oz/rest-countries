@@ -25,7 +25,15 @@ export default async function Home({
 }) {
   const countries: countryData[] = await getCountries();
   let filteredCountries: countryData[];
-  if (!!searchParams?.region) {
+  if (!!searchParams?.region && !!searchParams?.country) {
+    const term = searchParams?.country;
+    const searchTerm = term ? term[0].toUpperCase() + term.slice(1) : "";
+    filteredCountries = countries.filter(
+      (country) =>
+        country.name.common.includes(searchTerm) &&
+        country.region == searchParams.region
+    );
+  } else if (!!searchParams?.region) {
     filteredCountries = countries.filter(
       (country) => country.region == searchParams.region
     );
