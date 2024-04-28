@@ -1,4 +1,3 @@
-import { countReset } from "console";
 import Country_Card from "./UIComponents/country_card";
 import RegionSelector from "./UIComponents/regionSelector";
 import SearchForm from "./UIComponents/searchform";

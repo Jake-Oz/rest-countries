@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import ThemeSwitcher from "./theme_switcher";
 import { useRouter } from "next/navigation";
 

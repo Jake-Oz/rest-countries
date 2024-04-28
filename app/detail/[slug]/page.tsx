@@ -2,7 +2,7 @@ import {
   getCountryByCode,
   getCountryNameByCode,
 } from "@/app/actions/countryData";
-import React, { ReactComponentElement } from "react";
+import React from "react";
 import Image from "next/image";
 import Detail_label from "@/app/UIComponents/detail_label";
 import Border_button from "@/app/UIComponents/border_button";
